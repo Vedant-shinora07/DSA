@@ -43,7 +43,7 @@ void peek() {
 }
 
 void display() {
-    if(isFull()) {
+    if(isEmpty()) {
         printf("stack is empty..!");
         return;
     }
