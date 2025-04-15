@@ -1,5 +1,3 @@
-// Insertion in an array..
-// Time complexity : O(n)
 
 
 #include <stdio.h>

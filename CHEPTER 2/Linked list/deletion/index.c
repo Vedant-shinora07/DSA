@@ -53,6 +53,6 @@ int main() {
 
     traversal(head);
     printf("After delete an element from give index\n");
-    head = deleteIndex(head,2);  
+    head = deleteIndex(head,3);  
     traversal(head);
 }
