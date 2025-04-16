@@ -17,15 +17,25 @@ void traversal(struct Node *ptr) {
 
 struct Node* deleteAtValue(struct Node* head,int value) {
     struct Node* p = head;
-    struct Node* q = head -> next;
+    struct Node* q = head->next;
 
-    while(q->data != value && q->next != NULL) {
+    struct Node* a= head;
+    if(head->data == value) {
+        head = head->next;
+        free(a);
+        return head;
+    }
+    while(q->data != value && q->next !=NULL) {
         p = p->next;
         q = q->next;
     }
     if(q->data == value) {
-        p ->next = q->next;
+
+        p->next = q->next;
         free(q);
+    } else {
+        printf("value not found..!");
+        return 0;
     }
     return head;
 }
