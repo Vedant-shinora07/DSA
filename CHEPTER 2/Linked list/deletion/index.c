@@ -1,4 +1,4 @@
-// Deletion after given index in the Linked list
+// Deletion at given index in the Linked list
 
 #include<stdio.h>
 #include<stdlib.h>
