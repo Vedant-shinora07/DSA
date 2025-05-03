@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int recursive(int arr[], int size, int value, int index) {
-    if(index == size) return -1;
+    if(index == size) return -1; // base case
     if(arr[index] == value) return index;
 
         recursive(arr, size, value, index + 1);

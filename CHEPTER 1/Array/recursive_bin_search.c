@@ -1,9 +1,9 @@
 #include<stdio.h>
 
 int recursive(int arr[], int low, int high, int value) {
-    if(low > high) return -1;
+    if(low > high) return -1; // base case
 
-    int mid = (low + high)/2;
+    int mid = (low + high)/2; 
 
     if(arr[mid] == value) return mid;
     else if(arr[mid] < value) return recursive(arr, mid+1, high, value);
