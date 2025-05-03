@@ -15,12 +15,12 @@ int search(int arr[], int size, int value) {
 int main() {
     int arr[5] = {10,20,30,40,50};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int value = 3;
+    int value = 20;
 
     int index = search(arr,size,value);
 
-    if(!index) {
-        printf("Element %d not found at index %d",value,index);
+    if(!index != -1) {
+        printf("Element %d found at index %d",value,index);
     } else {
         printf("Element not found in the array");
     }
