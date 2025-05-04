@@ -1,7 +1,7 @@
 // Menu-driven interface in main function for interactive input (used in real programs)
 
 #include<stdio.h>
-#define size 3
+#define size 30
 
 
 int stack[size];
