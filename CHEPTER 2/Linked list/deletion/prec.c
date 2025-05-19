@@ -57,10 +57,6 @@ struct Node* DeleteAtIndex(struct Node* head,int index) {
 
 struct Node* DeleteAfterNode(struct Node* head, struct Node* prevNode) {
     if(head == NULL) return NULL;
-    if(head->next == head) {
-        free(head);
-        return NULL;
-    }
     struct Node* p = prevNode->next;
     prevNode->next = p->next;
     free(p);
@@ -116,7 +112,7 @@ int main() {
     fourth -> data = 23;
     fourth -> next = NULL;
 
-    head = DeleteAtValue(head,223);
+    head = DeleteAtValue(head,7);
     traversal(head);
     
 }

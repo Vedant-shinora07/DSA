@@ -4,7 +4,7 @@
 #include<stdio.h>
 
 void Delete(int arr[], int *size, int pos) {
-    for(int i=pos; i<*size-1;i++) {
+    for(int i=pos; i<*size ;i++) {
         arr[i] = arr[i+1];
     }
     (*size)--;
@@ -19,7 +19,7 @@ int main() {
         printf("%d ",arr[i]);
     }
     printf("\n");
-    Delete(arr,&size,2);
+    Delete(arr,&size,4);
 
     printf("array after deletion : ");
     for(int i=0;i<size;i++) {

@@ -20,27 +20,31 @@ int isFull() {
 void push(int n) {
     if(isFull()) {
         printf("stack is overflow..!\n");
-    } else {
+        return;
+    }
+    
         stack[++top] = n;
         printf("pushed %d\n",n);
     }
-}
+
 
 void pop() {
     if(isEmpty()) {
         printf("Stack is empty..!\n");
-    } else {
+        return;
+    } 
         printf("popped %d\n", stack[top--]);
     }
-}
+
 
 void peek() {
     if(isEmpty()) {
         printf("stack is empty..!\n");
-    } else {
+        return;
+    }
         printf("Top element of the stack is : %d\n",stack[top]);
     }
-}
+
 
 void display() {
     if(isEmpty()) {

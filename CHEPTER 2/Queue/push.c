@@ -7,7 +7,7 @@ int queue[size];
 int front = -1,rear = -1;
 
 void Enqueue(int n) {
-    if(rear = size -1) {
+    if(rear == size -1) {
         printf("Queue is overflow..!");
     } else {
         if(front == -1) front = 0;
@@ -16,7 +16,7 @@ void Enqueue(int n) {
     }
 }
 void display() {
-    if(isEmpty()) {
+    if(rear == size-1) {
         printf("queue is empty..!");
         return;
     }

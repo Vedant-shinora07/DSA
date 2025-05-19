@@ -52,7 +52,7 @@ void display() {
         printf("stack is empty..!");
         return;
     }
-    printf("stack elements : ");
+    printf("Queue elements : ");
     struct Node* ptr = front;
     while(ptr != NULL) {
         printf("%d ",ptr->data);

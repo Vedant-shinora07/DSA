@@ -41,7 +41,12 @@ struct Node* InsertAtBeginning(struct Node* head, int data) {
 struct Node* InsertatEnd(struct Node* head, int data) {
     struct Node* ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr->data = data;
-    ptr->prev = NULL;
+    ptr->next = NULL;
+
+    if(head == NULL) {
+        ptr->prev = NULL;
+        return ptr;
+    }
 
     struct Node* p = head;
     while(p->next != NULL) {

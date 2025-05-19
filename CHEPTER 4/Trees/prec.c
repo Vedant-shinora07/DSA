@@ -1,80 +1,64 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-struct Node
-{
+struct Node {
     int data;
-    struct Node *left;
-    struct Node *right;
+    struct Node* left;
+    struct Node* right;
 };
 
-struct Node *createNode(int data)
-{
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
 
-    newNode->left = newNode->right = NULL;
+    newNode-> left = newNode->right = NULL;
     return newNode;
 }
 
-void inorder(struct Node *root)
-{
-    if (root)
-    {
+void inorder(struct Node* root) {
+    if(root) {
         inorder(root->left);
-        printf("%d ", root->data);
+        printf("%d ",root->data);
         inorder(root->right);
     }
 }
 
-struct Node *insertNode(struct Node *root, int data)
-{
-    if (!root)
-        return createNode(data);
+struct Node* insertNode(struct Node* root, int data) {
+    if(!root) return createNode(data);
 
-    if (data <= root->data)
-    {
-        root->left = insertNode(root->left, data);
-    }
-    else if (data >= root->data)
-    {
+    if(data > root->data) {
         root->right = insertNode(root->right, data);
+    }
+    else if (data < root->data) {
+        root->left = insertNode(root->left, data);
     }
     return root;
 }
 
-struct Node *successor(struct Node *root)
-{
-    struct Node *ptr = root;
-    while (ptr && ptr->left)
-    {
+struct Node* successor(struct Node* root) {
+    struct Node* ptr = root;
+    while(ptr && ptr->left) {
         ptr = ptr->left;
     }
     return ptr;
 }
 
-struct Node *deleteNode(struct Node *root, int value)
-{
-    if (!root)
-        return root;
+struct Node* deleteNode(struct Node* root, int value) {
+    if(!root) return root;
 
-    if (value <= root->data)
-    {
-        root->left = deleteNode(root->left, value);
-    }
-    else if (value > root->data)
-    {
+    if(value < root->data) {
+        root->left = deleteNode(root->left,value);
+    } 
+    else if(value > root->data) {
         root->right = deleteNode(root->right, value);
     }
-    else 
-    {
+    else {
         if(!root->left) {
             struct Node* ptr = root->right;
             free(root);
             return ptr;
         }
-        else if(!root->right)
-        {
+        else if(!root->right) {
             struct Node* ptr = root->left;
             free(root);
             return ptr;
@@ -88,17 +72,17 @@ struct Node *deleteNode(struct Node *root, int value)
 
 int main() {
     struct Node* root = NULL;
-    
-    root = insertNode(root, 23);
-    root = insertNode(root, 45);
-    root = insertNode(root, 54);
-    root = insertNode(root, 2);
-    root = insertNode(root, 88);
-    root = insertNode(root, 76);
-    root = insertNode(root, 53);
-    root = insertNode(root, 91);
+
+    root = insertNode(root, 10);
+    root = insertNode(root, 20);
+    root = insertNode(root, 30);
+    root = insertNode(root, 40);
+    root = insertNode(root, 50);
+    root = insertNode(root, 60);
+    root = insertNode(root, 70);
+    root = insertNode(root, 80);
     root = insertNode(root, 90);
 
-    printf("Inorder traversal : ");
+    printf("inorder traversal : ");
     inorder(root);
 }
